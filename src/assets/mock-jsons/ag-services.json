@@ -1,0 +1,24 @@
+{
+    "agServices" : [
+        {
+            "id": "1",
+            "name": "Domestic"
+        },
+        {
+            "id": "2",
+            "name": "Commercial"
+        },
+        {
+            "id": "3",
+            "name": "Pillar Tank Cleaning"
+        },
+        {
+            "id": "4",
+            "name": "Well Cleaning"
+        },
+        {
+            "id": "5",
+            "name": "Jet Lorry"
+        }        
+    ]
+}

@@ -1,0 +1,20 @@
+{
+    "ag-divisions": [
+        {
+            "id" : "1",
+            "name" : "Under Ground",
+            "serviceType" : {
+                "id": "1",
+                "name": "Domestic"
+            }
+        },
+        {
+            "id" : "2",
+            "name" : "Over Tank",
+            "serviceType" : {
+                "id": "1",
+                "name": "Domestic"
+            }
+        }
+    ]
+}

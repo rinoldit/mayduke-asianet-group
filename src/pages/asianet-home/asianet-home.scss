@@ -1,0 +1,70 @@
+page-asianet-home {
+
+}
+
+// .filters {
+
+//     ion-col {
+//         text-align: center;
+//         font-size: 1.6rem;
+//         line-height: 1.6rem;
+
+//         ion-icon {
+//             color: #ccc;
+//         }
+
+//         &.col-with-arrow {
+//             display: flex;
+//             justify-content: center;
+//             align-items: center;
+//         }
+//     }
+
+//     p {
+//         color: #fff;
+//         margin: 0;
+//         font-size: 1.6rem;
+//         line-height: 1.6rem;
+//     }
+
+//     .selected {
+//         font-weight: 700;
+//     }
+// }
+
+.sampleFont{
+    font-family: Arial, Helvetica, sans-serif;
+    // font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    // font-size: 30pt;
+    font-weight: bold;
+    // color: cadetblue;
+    letter-spacing: 3pt;
+    // width: 20px;
+    // border: solid 1px #000000;
+    text-align: center;
+    height: 50px;
+        // background-color: #6eccb4;
+        padding-top: 15px;
+        margin-top: 20px ;
+}
+
+.serviceDivisionListCard{
+    ion-card {
+        // position: relative;
+        // margin: 0 !important;
+        margin-bottom: 10px;
+        width: 100%;   
+        height: 200px;
+    }
+}
+
+.mycardList {
+    ion-list {
+        display: -webkit-flex;
+        flex-direction: row;
+        width: 1000px;
+    }
+    ion-item{
+        width: auto;
+    }
+}

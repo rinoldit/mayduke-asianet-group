@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { AsianetHomePage } from '../asianet-home/asianet-home';
 
 @Component({
   selector: 'page-home',
@@ -11,4 +12,8 @@ export class HomePage {
 
   }
 
+  public onWaterTankCleaning() {
+    this.navCtrl.push(AsianetHomePage);
+  }
+  
 }
