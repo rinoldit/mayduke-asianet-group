@@ -87,41 +87,67 @@
 
 
 
-<ion-content class="serviceDivisionListCard">
-  <ion-card (tap)="navCategoryAndPricesPage()">
+<ion-content>
+
+
+  <ion-card (tap)="navCategoryAndPricesPage()"  class="serviceListCard">
     <ion-item>
       <ion-card-title>
         Domestic
       </ion-card-title>
-      <ion-card-content class="mycardList">
+      <ion-card-content class="mycardList" >
         <ion-scroll scrollX="true" style="height: 200px;">
-          <ion-list>
-            <ion-item>
-              <ion-thumbnail item-start>
-                <img src="http://www.asianetbangalore.com/images/water-tank-cleaning-services-02.jpg">
-              </ion-thumbnail>
-              <label>
-                  Underground Tank Cleaning
-              </label>
-            </ion-item>
-            <ion-item>
-              <ion-thumbnail item-start>
-                <img src="https://www.truneto.com/images/services/thumb/384x250/water-tank-cleaning.jpg">
-              </ion-thumbnail>
-              <label>
-                Overtank Cleaning
-              </label>
-            </ion-item>
-            <ion-item>
-              <ion-thumbnail item-start>
-                <img src="http://www.asianetbangalore.com/images/water-tank-cleaning-services-02.jpg">
-              </ion-thumbnail>
-              <label>
-                Underground Watetank cleaning
-              </label>
-            </ion-item>
-           
-          </ion-list>
+
+          
+        <ion-grid>
+          <ion-row align-items-start>
+              <ion-list class="divisionListCard">
+                <ion-col >
+                  <ion-item>
+                    <ion-card >
+                      <ion-item>
+                        <ion-thumbnail item-start>
+                          <img src="http://www.asianetbangalore.com/images/water-tank-cleaning-services-02.jpg">
+                        </ion-thumbnail>
+                        <label>
+                          Underground Tank Cleaning
+                        </label>
+                      </ion-item>
+                    </ion-card>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item>
+                      <ion-card >
+                          <ion-item>
+                    <ion-thumbnail item-start>
+                      <img src="https://www.truneto.com/images/services/thumb/384x250/water-tank-cleaning.jpg">
+                    </ion-thumbnail>
+                    <label>
+                      Overtank Cleaning
+                    </label>
+                  </ion-item>
+                  </ion-card>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item>
+                      <ion-card >
+                          <ion-item>
+                    <ion-thumbnail item-start>
+                      <img src="http://www.asianetbangalore.com/images/water-tank-cleaning-services-02.jpg">
+                    </ion-thumbnail>
+                    <label>
+                      Underground Watetank cleaning
+                    </label>
+                  </ion-item>
+                  </ion-card>
+                  </ion-item>
+                </ion-col>
+              </ion-list>
+            </ion-row>
+          </ion-grid>
+
         </ion-scroll>
       </ion-card-content>
     </ion-item>
@@ -130,7 +156,7 @@
   <ion-card (tap)="navCategoryAndPricesPage()">
     <ion-item>
       <ion-card-title>
-          Commercial
+        Commercial
       </ion-card-title>
       <ion-card-content class="mycardList">
         <ion-scroll scrollX="true" style="height: 200px;">
@@ -172,15 +198,15 @@
                 <img src="http://www.asianetbangalore.com/images/water-tank-cleaning-services-02.jpg">
               </ion-thumbnail>
               <label>
-                  Treated Tank
+                Treated Tank
               </label>
-            </ion-item> 
+            </ion-item>
             <ion-item>
               <ion-thumbnail item-start>
                 <img src="http://www.pacificgroupdevelopments.com/sites/default/files/images/secondary/DSC03125.JPG">
               </ion-thumbnail>
               <label>
-                  Flush Tank
+                Flush Tank
               </label>
             </ion-item>
             <ion-item>
@@ -188,10 +214,10 @@
                 <img src="http://www.asianetbangalore.com/images/water-tank-cleaning-services-02.jpg">
               </ion-thumbnail>
               <label>
-                  HVAC Tank
+                HVAC Tank
               </label>
             </ion-item>
-           
+
           </ion-list>
         </ion-scroll>
       </ion-card-content>
@@ -201,7 +227,7 @@
   <ion-card>
 
     <ion-card-header>
-     
+
     </ion-card-header>
 
     <ion-card-content>
@@ -218,7 +244,7 @@
   <ion-card>
 
     <ion-card-header>
-      
+
     </ion-card-header>
 
     <ion-card-content>
