@@ -22,7 +22,7 @@
               <ion-list class="divisionListCard">
                 <ion-col *ngFor="let category of service.categories">
                   <ion-item >
-                    <ion-card >
+                    <ion-card (tap)="navCategoryAndPricesPage(category)" >
                       <ion-item >
                         <ion-thumbnail item-start>
                           <img src="http://www.asianetbangalore.com/images/water-tank-cleaning-services-02.jpg">
