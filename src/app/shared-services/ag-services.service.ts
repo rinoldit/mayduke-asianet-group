@@ -7,7 +7,7 @@ import { Observable } from '../../../node_modules/rxjs/Observable';
 export class AgServicesService {
 
 constructor(private http: HttpClient) { }
-private _url = "../../assets/mock-jsons/ag-services.json"
+private _url = "../../assets/mock-jsons/main-page.json";
 
     getAgSerivcesList(): Observable<IAgService[]> {
         return this.http.get<IAgService[]>(this._url);

@@ -26,6 +26,8 @@ export class AsianetHomePage {
 
   @ViewChild(Slides) slides: Slides;
 
+  public homePageData: any;
+
   public agServiceList: any;
     tab1Root: any
     tab2Root: any
@@ -68,16 +70,25 @@ export class AsianetHomePage {
     this.navCtrl.push(AswaterProofPage);
   }
 
-  public navCategoryAndPricesPage() {
+  public navCategoryAndPricesPage(selectedCategory) {
+    console.log("Selected Category--->  ", selectedCategory);
     this.navCtrl.push(CategoryAndPricesPage);
   }
   
 
   public getAgServiceList() {
     
-    this.agServiceList = this.agServices.getAgSerivcesList();
+    this.agServices.getAgSerivcesList().subscribe( 
+      data=> {console.log("Hey I Got the Home Page Data====> ", data)
+        this.homePageData = data;
+      
+    },
+      error => { console.error(error);
+       } 
+    
+    );
 
     // this.http.get("C:\Users\swathi\Documents\IONIC APPS\practice udemy\firstapp\src\assets\mock-jsons\ag-services.json");
-    console.log("---> ",this.agServiceList) ;
+
   }
 }

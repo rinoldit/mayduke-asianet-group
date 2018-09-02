@@ -18,6 +18,7 @@ import { ScrollableTabs } from './shared-components/scrollable-tabs/scrollable-t
 import { HttpClientModule } from '@angular/common/http';
 import { AgServicesService } from './shared-services/ag-services.service';
 import { CategoryAndPricesPage } from '../pages/category-and-prices/category-and-prices';
+import { HomePageDataProvider } from '../providers/home-page-data/home-page-data';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,8 @@ import { CategoryAndPricesPage } from '../pages/category-and-prices/category-and
     StatusBar,
     SplashScreen,
     AgServicesService,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    HomePageDataProvider
   ]
   
 })
