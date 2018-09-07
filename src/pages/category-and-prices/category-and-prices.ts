@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
@@ -13,11 +13,22 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   selector: 'page-category-and-prices',
   templateUrl: 'category-and-prices.html',
 })
-export class CategoryAndPricesPage {
+export class CategoryAndPricesPage implements OnInit{
   pet: string = "puppies";
   
+  public division;
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
+
+  ngOnInit() {
+    const selectedDivision = this.navParams.data;
+    console.log("OnInit Category and prices--> ", selectedDivision)
+
+    this.division = selectedDivision;
+  }
+
+
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad CategoryAndPricesPage');

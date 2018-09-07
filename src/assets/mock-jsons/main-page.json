@@ -1,7 +1,7 @@
 [{
     "id": "1",
     "name": "Domestic",
-    "categories": [{
+    "divisions": [{
         "id": "1",
         "name": "Under Ground",
         "imgScr": "http://www.asianetbangalore.com/images/water-tank-cleaning-services-02.jpg",
@@ -24,7 +24,7 @@
   {
     "id": "2",
     "name": "Commercial",
-    "categories": [{
+    "divisions": [{
         "id": "1",
         "name": "Treated Tank",
         "serviceType": {
@@ -53,18 +53,18 @@
   {
     "id": "3",
     "name": "Pillar Tank Cleaning",
-    "categories": []
+    "divisions": []
   },
   {
     "id": "4",
     "name": "Well Cleaning",
-    "categories": []
+    "divisions": []
 
   },
   {
     "id": "5",
     "name": "Jet Lorry",
-    "categories": []
+    "divisions": []
 
   }
 
