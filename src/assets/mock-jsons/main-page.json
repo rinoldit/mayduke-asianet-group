@@ -1,20 +1,73 @@
 [{
-    "id": "1",
+    "id": 1,
     "name": "Domestic",
     "divisions": [{
-        "id": "1",
+        "id": 1,
         "name": "Under Ground",
         "imgScr": "http://www.asianetbangalore.com/images/water-tank-cleaning-services-02.jpg",
+        "categories": [{
+            "id": 1,
+            "name": "Underground Sump",
+            "priceList": [{
+                "label": "1000 Ltrs Tank",
+                "price": 900
+              },
+              {
+                "label": "1001-2500 Ltrs Tank",
+                "price": 1700
+              },
+              {
+                "label": "2501-5000 Ltrs Tank",
+                "price": 2800
+              },
+              {
+                "label": "5001-8000 Ltrs Tank",
+                "price": 4000
+              }
+
+            ]
+          },
+          {
+            "id": 2,
+            "name": "Underground Rainwater Sump",
+            "priceList": [{
+                "label": "1000 Ltrs Tank",
+                "price": 1000
+              },
+              {
+                "label": "1001-2500 Ltrs Tank",
+                "price": 1900
+              },
+              {
+                "label": "2501-5000 Ltrs Tank",
+                "price": 2200
+              }
+            ]
+
+          },
+          {
+            "id": 3,
+            "name": "Waste Water Sump"
+          },
+          {
+            "id": 4,
+            "name": "Well Cleaning"
+          },
+          {
+            "id": 5,
+            "name": "Ring Type Sump"
+          }
+        ],
         "serviceType": {
-          "id": "1",
+          "id": 1,
           "name": "Domestic"
         }
       },
       {
-        "id": "2",
+        "id": 2,
         "name": "Over Tank",
         "serviceType": {
-          "id": "1",
+          "id": 1,
           "name": "Domestic"
         }
       }
@@ -22,47 +75,47 @@
   },
 
   {
-    "id": "2",
+    "id": 2,
     "name": "Commercial",
     "divisions": [{
-        "id": "1",
+        "id": 1,
         "name": "Treated Tank",
         "serviceType": {
-          "id": "2",
+          "id": 2,
           "name": "Commercial"
         }
       },
       {
-        "id": "2",
+        "id": 2,
         "name": "Flush Tank",
         "serviceType": {
-          "id": "2",
+          "id": 2,
           "name": "Commercial"
         }
       },
       {
-        "id": "3",
+        "id": 3,
         "name": " HVAC Tank",
         "serviceType": {
-          "id": "2",
+          "id": 2,
           "name": "Commercial"
         }
       }
     ]
   },
   {
-    "id": "3",
+    "id": 3,
     "name": "Pillar Tank Cleaning",
     "divisions": []
   },
   {
-    "id": "4",
+    "id": 4,
     "name": "Well Cleaning",
     "divisions": []
 
   },
   {
-    "id": "5",
+    "id": 5,
     "name": "Jet Lorry",
     "divisions": []
 
