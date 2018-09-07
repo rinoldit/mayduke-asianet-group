@@ -13,5 +13,4 @@ export class HomePageDataProvider {
   constructor(public http: HttpClient) {
     console.log('Hello HomePageDataProvider Provider');
   }
-
 }
