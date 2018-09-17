@@ -5,6 +5,7 @@ import { IonicPage, NavController, NavParams, Slides } from 'ionic-angular';
 // import { IAgService } from '../../app/shared-interfaces/ag-service';
 import { AgServicesService } from '../../app/shared-services/ag-services.service';
 import { CategoryAndPricesPage } from '../category-and-prices/category-and-prices';
+import { EnquiryFormPage } from '../enquiry-form/enquiry-form';
 
 /**
  * Generated class for the AsianetHomePage page.
@@ -57,9 +58,10 @@ export class AsianetHomePage {
 
   public OnloadCategoryAndPrices
 
-  public goToCategoryAndPricesPage(selectedDivision) {
+  public goToCategoryAndPricesPage(selectedDivision?) {
     console.log("Selected Category--->  ", selectedDivision);
-    this.navCtrl.push(CategoryAndPricesPage, selectedDivision );
+
+    return selectedDivision? this.navCtrl.push(CategoryAndPricesPage, selectedDivision ) : this.navCtrl.push(EnquiryFormPage ) ;
   }
 
 

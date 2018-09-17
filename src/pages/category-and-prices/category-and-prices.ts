@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
@@ -15,7 +15,8 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class CategoryAndPricesPage implements OnInit{
   pet: string = "puppies";
-  
+  selectedPriceIndex = null;
+  selectedCategoryIndex = null;
   public division;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
@@ -29,9 +30,25 @@ export class CategoryAndPricesPage implements OnInit{
   }
 
 
+  openChart(selectedPriceIndex, selectedCatIndex) {
+    return this.selectedPriceIndex = selectedPriceIndex, this.selectedCategoryIndex = selectedCatIndex;
+  }
+
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad CategoryAndPricesPage');
+  }
+
+  reduceOrder(selectedPriceIndex, selectedCategoryIndex ) {
+    console.log(selectedPriceIndex, selectedCategoryIndex);
+
+    this.division.categories[selectedCategoryIndex].priceList[selectedPriceIndex].numberOfOrders >0 ?
+    this.division.categories[selectedCategoryIndex].priceList[selectedPriceIndex].numberOfOrders  -= 1 : 0;
+  }
+
+  increasOrder(selectedPriceIndex, selectedCategoryIndex ) {
+    this.division.categories[selectedCategoryIndex].priceList[selectedPriceIndex].numberOfOrders >=0 ?
+    this.division.categories[selectedCategoryIndex].priceList[selectedPriceIndex].numberOfOrders  += 1 : 0;
   }
 
 }

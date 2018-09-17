@@ -47,26 +47,35 @@
 
 <ion-content>
 
-  <ion-list *ngFor=" let category of division.categories; let catIndex = index;">
+  <ion-list *ngFor=" let category of division.categories; let categoryIndex = index;">
     <ion-list-header>
       {{category.name}}
     </ion-list-header>
-    <ion-item *ngFor="let price of category.priceList; let i = index;"> {{price.label}}
+    <ion-item *ngFor="let price of category.priceList; let priceIndex = index;"> {{price.label}}
       <!-- <ion-icon name="rose" item-end></ion-icon> -->
-      <button (click)="open=!open" clear small ion-button item-end outline icon-end style=" border-radius: 20px">
+      <button (click)=" open=!open ;openChart(priceIndex, categoryIndex)" clear small ion-button item-end outline
+        icon-end style=" border-radius: 20px">
         <ion-icon ios="ios-cart" md="md-cart" item-end></ion-icon>
       </button>
-      <ion-card *ngIf="open">
-        <button clear small ion-button item-end outline icon-end style=" border-radius: 20px">
+      <ion-card *ngIf="open && priceIndex==selectedPriceIndex && categoryIndex == selectedCategoryIndex">
+        <button (tap)="reduceOrder(selectedPriceIndex, selectedCategoryIndex)" clear small ion-button item-end outline
+          icon-end style=" border-radius: 20px">
           <ion-icon name="remove-circle" item-end></ion-icon>
         </button>
-        <input ion-input item-end style="width: 25px;">
-        <button clear small ion-button item-end outline icon-end style=" border-radius: 20px">
+        <input ion-input item-end style="width: 25px; text-align: center" [(ngModel)]="price.numberOfOrders">
+        <button (tap)="increasOrder(selectedPriceIndex, selectedCategoryIndex)" clear small ion-button item-end outline
+          icon-end style=" border-radius: 20px">
           <ion-icon name="add-circle" item-end></ion-icon>
         </button>
-        <button clear small ion-button item-end outline icon-end style=" border-radius: 20px">
-          <ion-icon ios="ios-close-circle" md="md-close-circle" item-end></ion-icon>
+        <button small item-end  ion-button >
+          <ion-icon  ios="ios-close-circle" (tap)="price.numberOfOrders = 0" md="md-close-circle"></ion-icon>
         </button>
+
+
+
+        <!-- <button (tap)="price.numberOfOrders = 0" clear small ion-button item-end outline icon-end style=" border-radius: 20px">
+          <ion-icon ios="ios-close-circle" md="md-close-circle" item-end></ion-icon>
+        </button> -->
       </ion-card>
     </ion-item>
   </ion-list>
