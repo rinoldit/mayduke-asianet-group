@@ -1,5 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { ToastController } from 'ionic-angular';
+
 
 /**
  * Generated class for the CategoryAndPricesPage page.
@@ -19,7 +21,8 @@ export class CategoryAndPricesPage implements OnInit{
   selectedCategoryIndex = null;
   public division;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,
+    public toastCtrl: ToastController) {
   }
 
   ngOnInit() {
@@ -44,11 +47,22 @@ export class CategoryAndPricesPage implements OnInit{
 
     this.division.categories[selectedCategoryIndex].priceList[selectedPriceIndex].numberOfOrders >0 ?
     this.division.categories[selectedCategoryIndex].priceList[selectedPriceIndex].numberOfOrders  -= 1 : 0;
+    this.setOrderList();
   }
 
   increasOrder(selectedPriceIndex, selectedCategoryIndex ) {
     this.division.categories[selectedCategoryIndex].priceList[selectedPriceIndex].numberOfOrders >=0 ?
     this.division.categories[selectedCategoryIndex].priceList[selectedPriceIndex].numberOfOrders  += 1 : 0;
+    this.setOrderList();
   }
+
+
+    private setOrderList( ) {
+//  use forEach and set a new array..
+
+      // get the final order list
+
+
+    }
 
 }
