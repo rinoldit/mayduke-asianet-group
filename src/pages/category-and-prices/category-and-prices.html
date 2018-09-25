@@ -53,11 +53,11 @@
     </ion-list-header>
     <ion-item *ngFor="let price of category.priceList; let priceIndex = index;"> {{price.label}}
       <!-- <ion-icon name="rose" item-end></ion-icon> -->
-      <button (click)=" open=!open ;openChart(priceIndex, categoryIndex)" clear small ion-button item-end outline
+      <button (click)=" toggleChart(priceIndex, categoryIndex)" clear small ion-button item-end outline
         icon-end style=" border-radius: 20px">
         <ion-icon ios="ios-cart" md="md-cart" item-end></ion-icon>
       </button>
-      <ion-card *ngIf="open && priceIndex==selectedPriceIndex && categoryIndex == selectedCategoryIndex">
+      <ion-card *ngIf="priceIndex==selectedPriceIndex && categoryIndex == selectedCategoryIndex">
         <button (tap)="reduceOrder(selectedPriceIndex, selectedCategoryIndex)" clear small ion-button item-end outline
           icon-end style=" border-radius: 20px">
           <ion-icon name="remove-circle" item-end></ion-icon>
@@ -68,7 +68,8 @@
           <ion-icon name="add-circle" item-end></ion-icon>
         </button>
         <button small item-end  ion-button >
-          <ion-icon  ios="ios-close-circle" (tap)="price.numberOfOrders = 0" md="md-close-circle"></ion-icon>
+          cancel
+          <ion-icon  ios="ios-close-circle" (tap)="price.numberOfOrders = 0; toggleChart(priceIndex, categoryIndex)"  md="md-close-circle"></ion-icon>
         </button>
 
 

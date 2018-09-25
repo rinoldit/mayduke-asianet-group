@@ -32,9 +32,17 @@ export class CategoryAndPricesPage implements OnInit{
     this.division = selectedDivision;
   }
 
-
-  openChart(selectedPriceIndex, selectedCatIndex) {
-    return this.selectedPriceIndex = selectedPriceIndex, this.selectedCategoryIndex = selectedCatIndex;
+/**
+ * @description toggle chart box
+ * @param selectedPriceIndex
+ * @param selectedCatIndex
+ */
+  toggleChart(selectedPriceIndex, selectedCatIndex) {
+    if(this.selectedPriceIndex == selectedPriceIndex && this.selectedCategoryIndex == selectedCatIndex)
+    {
+      return this.selectedPriceIndex =  this.selectedCategoryIndex = -1;
+    }
+    else return this.selectedPriceIndex = selectedPriceIndex, this.selectedCategoryIndex = selectedCatIndex;
   }
 
 
