@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
 import { IonicPage, NavController, NavParams } from "ionic-angular";
 import { ToastController } from "ionic-angular";
+import { ItemPrice } from "../../app/shared/model/item-price";
 
 @IonicPage()
 @Component({
@@ -92,6 +93,8 @@ export class CategoryAndPricesPage implements OnInit {
     //  use forEach and set a new array..
     // get the final order list.
 
+    // check the numberof orders > 0,
+    //
     // console.log(itemCategory.priceList);
     for (let price of itemCategory.priceList) {
       if (Object.is(price, itemPrice)) {
@@ -114,5 +117,5 @@ export class CategoryAndPricesPage implements OnInit {
    * @param itemCategory - category of selected item.
    * @param itemPrice - price of selected item.
    */
-  public removeChartItem(itemCategory, itemPrice) {}
+  public removeChartItem(itemCategory, itemPrice: ItemPrice) {}
 }
