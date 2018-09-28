@@ -20,11 +20,11 @@
           <ion-grid>
             <ion-row align-items-start>
               <ion-list class="divisionListCard">
-                <ion-col  *ngFor="let division of service.divisions">
+                <ion-col text-wrap *ngFor="let division of service.divisions">
                   <ion-item >
                     <ion-card (tap)="goToCategoryAndPricesPage(division)" >
                       <ion-item >
-                        <ion-thumbnail item-start>
+                        <ion-thumbnail  item-start>
                           <img src="http://www.asianetbangalore.com/images/water-tank-cleaning-services-02.jpg">
                         </ion-thumbnail>
                         <label>

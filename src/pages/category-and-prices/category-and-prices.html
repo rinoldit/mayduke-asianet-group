@@ -51,7 +51,7 @@
     <ion-list-header>
       {{category.name}}
     </ion-list-header>
-    <ion-item *ngFor="let price of category.priceList; let priceIndex = index;"> {{price.label}}
+    <ion-item *ngFor="let price of category.priceList; let priceIndex = index;"> {{price.label}} <br> Amount: {{price.price}}
       <!-- <ion-icon name="rose" item-end></ion-icon> -->
       <button (click)=" toggleChart(priceIndex, categoryIndex)" clear small ion-button item-end outline
         icon-end style=" border-radius: 20px">
@@ -63,13 +63,13 @@
           <ion-icon name="remove-circle" item-end></ion-icon>
         </button>
         <input ion-input item-end style="width: 25px; text-align: center" [(ngModel)]="price.numberOfOrders">
-        <button (tap)="increasOrder(selectedPriceIndex, selectedCategoryIndex)" clear small ion-button item-end outline
+        <button (click)="increasOrder(selectedPriceIndex, selectedCategoryIndex)" clear small ion-button item-end outline
           icon-end style=" border-radius: 20px">
           <ion-icon name="add-circle" item-end></ion-icon>
         </button>
-        <button small item-end  ion-button >
-          cancel
-          <ion-icon  ios="ios-close-circle" (tap)="price.numberOfOrders = 0; toggleChart(priceIndex, categoryIndex)"  md="md-close-circle"></ion-icon>
+        <button small item-end  ion-button (click)="toggleChart(priceIndex, categoryIndex); removeChartItem(category, price)" >
+
+          <ion-icon  ios="ios-close-circle" (tap)="price.numberOfOrders = 0;"  md="md-close-circle"></ion-icon>
         </button>
 
 
