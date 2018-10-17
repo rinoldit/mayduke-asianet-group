@@ -13,14 +13,14 @@
   <ion-card  class="serviceListCard" *ngFor="let service of homePageData">
     <ion-item>
       <ion-card-title>
-        {{service.name}}
+        {{service.category_name}}
       </ion-card-title>
       <ion-card-content class="mycardList">
         <ion-scroll scrollX="true" style="height: 200px;">
           <ion-grid>
             <ion-row align-items-start>
               <ion-list class="divisionListCard">
-                <ion-col text-wrap *ngFor="let division of service.divisions">
+                <ion-col text-wrap *ngFor="let division of service.subcategory">
                   <ion-item >
                     <ion-card (tap)="goToCategoryAndPricesPage(division)" >
                       <ion-item >
@@ -28,7 +28,7 @@
                           <img src="http://www.asianetbangalore.com/images/water-tank-cleaning-services-02.jpg">
                         </ion-thumbnail>
                         <label>
-                          {{division.name}}
+                          {{division.sub_categoryname}}
                         </label>
                       </ion-item>
                     </ion-card>

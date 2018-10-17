@@ -1,9 +1,9 @@
-import { ItemPrice } from "./item-price";
+import { ItemPackageDomain } from "./item-price";
 
-export class Category {
+export class CategoryDomain {
   private _id: number;
   private _name: string;
-  private _itemPriceList: ItemPrice[];
+  private _itemPriceList: ItemPackageDomain[];
   private _divisionId: number;
 
   /**
@@ -24,9 +24,9 @@ export class Category {
 
   /**
    * Getter itemPriceList
-   * @return {ItemPrice}
+   * @return {ItemPackageDomain}
    */
-  public get itemPriceList(): ItemPrice[] {
+  public get itemPriceList(): ItemPackageDomain[] {
     return this._itemPriceList;
   }
 
@@ -56,9 +56,9 @@ export class Category {
 
   /**
    * Setter itemPriceList
-   * @param {ItemPrice} value
+   * @param {ItemPackageDomain} value
    */
-  public set itemPriceList(value: ItemPrice[]) {
+  public set itemPriceList(value: ItemPackageDomain[]) {
     this._itemPriceList = value;
   }
 

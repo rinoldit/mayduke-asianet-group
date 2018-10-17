@@ -6,6 +6,7 @@ import { IonicPage, NavController, NavParams, Slides } from 'ionic-angular';
 import { AgServicesService } from '../../app/shared-services/ag-services.service';
 import { CategoryAndPricesPage } from '../category-and-prices/category-and-prices';
 import { EnquiryFormPage } from '../enquiry-form/enquiry-form';
+import { Task } from '../../app/shared/model/task';
 
 /**
  * Generated class for the AsianetHomePage page.
@@ -20,10 +21,7 @@ import { EnquiryFormPage } from '../enquiry-form/enquiry-form';
   templateUrl: 'asianet-home.html',
 })
 export class AsianetHomePage {
-
-  @ViewChild(Slides) slides: Slides;
-
-  public homePageData: any;
+  public homePageData: Task[] = [];
 
   public agServiceList: any;
   tab1Root: any
@@ -39,7 +37,7 @@ export class AsianetHomePage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
     public injector: Injector, private agServices: AgServicesService) {
-    this.getAgServiceList();
+    // this.getAgServiceList();
     this.getRealJson();
 
   }
@@ -47,14 +45,6 @@ export class AsianetHomePage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad AsianetHomePage');
   }
-
-  // Method executed when the slides are changed
-  public slideChanged(): void {
-    let currentIndex = this.slides.getActiveIndex();
-    this.showLeftButton = currentIndex !== 0;
-    this.showRightButton = currentIndex !== Math.ceil(this.slides.length() / 3);
-  }
-
 
   public OnloadCategoryAndPrices
 
@@ -70,7 +60,7 @@ export class AsianetHomePage {
     this.agServices.getAgSerivcesList().subscribe(
       data => {
         console.log("Hey I Got the Home Page Data====> ", data)
-        this.homePageData = data;
+        // this.homePageData = data;
 
       },
       error => {
@@ -84,7 +74,12 @@ export class AsianetHomePage {
   }
 
   private getRealJson() {
-    this.agServices.getActualJson();
 
+    this.agServices.getActualJson<Task>(({tasks})=> {
+      // const myService
+      // console.log('{tasks}--> ', tasks);
+      this.homePageData =[...tasks];
+      // console.table(this.homePageData );
+    });
   }
 }

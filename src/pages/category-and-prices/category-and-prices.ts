@@ -1,7 +1,9 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
 import { IonicPage, NavController, NavParams } from "ionic-angular";
 import { ToastController } from "ionic-angular";
-import { ItemPrice } from "../../app/shared/model/item-price";
+import { ItemPackageDomain } from "../../app/shared/model/item-price";
+import { CategoryDomain } from "../../app/shared/model/category";
+import { Subcategory } from "../../app/shared/model/subcategory";
 
 @IonicPage()
 @Component({
@@ -11,9 +13,10 @@ import { ItemPrice } from "../../app/shared/model/item-price";
 export class CategoryAndPricesPage implements OnInit {
   selectedPriceIndex = null;
   selectedCategoryIndex = null;
-  public division;
+  public division: Subcategory;
 
   private cartItemList = new Set();
+  private getServiceByIdUrl = "http://asianetbangalore.com/android/rest/v1/services/1";
 
   constructor(
     public navCtrl: NavController,
@@ -22,10 +25,9 @@ export class CategoryAndPricesPage implements OnInit {
   ) {}
 
   ngOnInit() {
-    const selectedDivision = this.navParams.data;
-    console.log("OnInit Category and prices--> ", selectedDivision);
+    this.division  = this.navParams.data;
+    console.log("OnInit Category and prices--> ", [this.division  ]);
 
-    this.division = selectedDivision;
   }
 
   /**
@@ -51,28 +53,30 @@ export class CategoryAndPricesPage implements OnInit {
   }
 
   public reduceOrder(selectedPriceIndex, selectedCategoryIndex) {
-    const selectedCategory = this.division.categories[selectedCategoryIndex];
-    const selectedPrice = this.division.categories[selectedCategoryIndex]
-      .priceList[selectedPriceIndex];
+    const selectedCategory = this.division.supercategory[selectedCategoryIndex];
+    const selectedPrice: ItemPackageDomain = this.division.supercategory[
+      selectedCategoryIndex
+    ].service[selectedPriceIndex];
 
-    this.division.categories[selectedCategoryIndex].priceList[
+    this.division.supercategory[selectedCategoryIndex].service[
       selectedPriceIndex
     ].numberOfOrders > 0
-      ? (this.division.categories[selectedCategoryIndex].priceList[
+      ? (this.division.supercategory[selectedCategoryIndex].service[
           selectedPriceIndex
         ].numberOfOrders -= 1)
       : 0;
+
     this.updateCartList(selectedCategory, selectedPrice);
   }
 
   public increasOrder(selectedPriceIndex, selectedCategoryIndex) {
-    const selectedCategory = this.division.categories[selectedCategoryIndex];
-    const selectedPrice = this.division.categories[selectedCategoryIndex]
-      .priceList[selectedPriceIndex];
-    this.division.categories[selectedCategoryIndex].priceList[
+    const selectedCategory = this.division.supercategory[selectedCategoryIndex];
+    const selectedPrice = this.division.supercategory[selectedCategoryIndex]
+      .service[selectedPriceIndex];
+    this.division.supercategory[selectedCategoryIndex].service[
       selectedPriceIndex
     ].numberOfOrders >= 0
-      ? (this.division.categories[selectedCategoryIndex].priceList[
+      ? (this.division.supercategory[selectedCategoryIndex].service[
           selectedPriceIndex
         ].numberOfOrders += 1)
       : 0;
@@ -89,33 +93,40 @@ export class CategoryAndPricesPage implements OnInit {
    * @param itemCategory - category of selected item.
    * @param itemPrice - price of selected item.
    */
-  private updateCartList(itemCategory, itemPrice) {
+  private updateCartList(
+    itemCategory: any,
+    itemPrice: any
+  ) {
+
+
+
     //  use forEach and set a new array..
     // get the final order list.
 
     // check the numberof orders > 0,
     //
-    // console.log(itemCategory.priceList);
-    for (let price of itemCategory.priceList) {
-      if (Object.is(price, itemPrice)) {
-        console.log(price);
-        // this.cartItemList = [...this.cartItemList, price ];
+    console.log(itemCategory);
 
-        // TODO destructure the array and array objects.
-        console.log(this.cartItemList);
-      }
+    const [...cartItemPriceList] = itemCategory.service;
+console.log(cartItemPriceList);
+
+    if(cartItemPriceList) {
+      const cartItemList = cartItemPriceList.filter(
+        item => item.numberOfOrders > 0
+      );
+      itemCategory.service = cartItemList;
+      console.log(itemCategory);
     }
+
     // this.cartItemList = [...itemCategory[itemCategory.id - 1](...itemPrice) ];
   }
 
-  private removeItemInChartList() {
-
-  }
+  private removeItemInChartList() {}
 
   /**
    * @description - Method to remove item from the chart.
    * @param itemCategory - category of selected item.
    * @param itemPrice - price of selected item.
    */
-  public removeChartItem(itemCategory, itemPrice: ItemPrice) {}
+  public removeChartItem(itemCategory, itemPrice: ItemPackageDomain) {}
 }

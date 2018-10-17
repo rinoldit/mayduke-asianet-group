@@ -30,7 +30,7 @@
   <ion-toolbar no-border-top>
 
     <ion-title>
-      {{division.name}}
+      {{division.sub_categoryname}}
     </ion-title>
 
   </ion-toolbar>
@@ -47,11 +47,11 @@
 
 <ion-content>
 
-  <ion-list *ngFor=" let category of division.categories; let categoryIndex = index;">
+  <ion-list *ngFor=" let category of division.supercategory; let categoryIndex = index;">
     <ion-list-header>
-      {{category.name}}
+      {{category.super_catename}}
     </ion-list-header>
-    <ion-item *ngFor="let price of category.priceList; let priceIndex = index;"> {{price.label}} <br> Amount: {{price.price}}
+    <ion-item *ngFor="let price of category.service; let priceIndex = index;"> {{price.label}} <br> Amount: {{price.price}}
       <!-- <ion-icon name="rose" item-end></ion-icon> -->
       <button (click)=" toggleChart(priceIndex, categoryIndex)" clear small ion-button item-end outline
         icon-end style=" border-radius: 20px">

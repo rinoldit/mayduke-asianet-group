@@ -8,7 +8,7 @@
         "categories": [{
             "id": 1,
             "name": "Underground Sump",
-            "priceList": [{
+            "itemPriceList": [{
                 "label": "1000 Ltrs Tank",
                 "price": 900,
                 "numberOfOrders" : 0
@@ -34,7 +34,7 @@
           {
             "id": 2,
             "name": "Underground Rainwater Sump",
-            "priceList": [{
+            "itemPriceList": [{
                 "label": "1000 Ltrs Tank",
                 "price": 1000,
                 "numberOfOrders" : 0
