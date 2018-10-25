@@ -7,6 +7,7 @@ import {
 } from "ionic-angular";
 import { Supercategory } from "../../app/shared/model/supercategory";
 import { ItemPackageDomain } from "../../app/shared/model/item-price";
+import { CartService } from "../../app/shared-services/cart.service";
 
 /**
  * Generated class for the SaveToCartPage page.
@@ -28,10 +29,8 @@ export class SaveToCartPage {
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
-    private viewCtrl: ViewController
-
-
-  ) {
+    private viewCtrl: ViewController,
+    private cartService: CartService ) {
     console.log(navParams.get("selectedCategory"));
     console.log(navParams.get("selectedService"));
   }
@@ -64,5 +63,7 @@ export class SaveToCartPage {
   public onConfirm() {
     // on confirm save to storage.
     // create a service to store value
+
+    this.cartService.addToCart( this.category, this.service);
   }
 }

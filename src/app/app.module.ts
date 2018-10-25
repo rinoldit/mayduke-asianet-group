@@ -17,6 +17,7 @@ import { AgServicesService } from './shared-services/ag-services.service';
 import { CategoryAndPricesPage } from '../pages/category-and-prices/category-and-prices';
 import { HomePageDataProvider } from '../providers/home-page-data/home-page-data';
 import { SaveToCartPage } from '../pages/save-to-cart/save-to-cart';
+import { CartService } from './shared-services/cart.service';
 
 @NgModule({
   declarations: [
@@ -50,6 +51,7 @@ import { SaveToCartPage } from '../pages/save-to-cart/save-to-cart';
     StatusBar,
     SplashScreen,
     AgServicesService,
+    CartService,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     HomePageDataProvider
   ]
