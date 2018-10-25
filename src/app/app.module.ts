@@ -16,6 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AgServicesService } from './shared-services/ag-services.service';
 import { CategoryAndPricesPage } from '../pages/category-and-prices/category-and-prices';
 import { HomePageDataProvider } from '../providers/home-page-data/home-page-data';
+import { SaveToCartPage } from '../pages/save-to-cart/save-to-cart';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { HomePageDataProvider } from '../providers/home-page-data/home-page-data
     TabsPage,
     AsianetHomePage,
     ScrollableTabs,
-    CategoryAndPricesPage
+    CategoryAndPricesPage,
+    SaveToCartPage
   ],
   imports: [
     BrowserModule,
@@ -41,7 +43,8 @@ import { HomePageDataProvider } from '../providers/home-page-data/home-page-data
     HomePage,
     TabsPage,
     AsianetHomePage,
-    CategoryAndPricesPage
+    CategoryAndPricesPage,
+    SaveToCartPage,
   ],
   providers: [
     StatusBar,
@@ -50,6 +53,6 @@ import { HomePageDataProvider } from '../providers/home-page-data/home-page-data
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     HomePageDataProvider
   ]
-  
+
 })
 export class AppModule {}

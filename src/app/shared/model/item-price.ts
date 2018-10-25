@@ -1,11 +1,12 @@
 export class ItemPackageDomain {
-  private packagename: string;
+  public packagename: string;
   private _price: number;
-  private _numberOfOrders: number;
+  private _cartQuantity: number;
   private category_id: number;
   private maxv: any;
   private minv: any;
   private package_id: number;
+
   public status: "1";
   public subcategory_id: "1";
   public supercategory_id: "1";
@@ -112,8 +113,8 @@ export class ItemPackageDomain {
    * Getter numberOfOrders
    * @return {number}
    */
-  public get numberOfOrders(): number {
-    return this._numberOfOrders;
+  public get cartQualtity(): number {
+    return this._cartQuantity;
   }
 
   /**
@@ -136,7 +137,7 @@ export class ItemPackageDomain {
    * Setter numberOfOrders
    * @param {number} value
    */
-  public set numberOfOrders(value: number) {
-    this._numberOfOrders = value;
+  public set cartQualtity(value: number) {
+    this._cartQuantity = value;
   }
 }
