@@ -18,8 +18,8 @@ import { CartService } from "../../app/shared-services/cart.service";
 
 @IonicPage()
 @Component({
-  selector: "page-save-to-cart",
-  templateUrl: "save-to-cart.html"
+  selector: "page-save-to-cart-modal",
+  templateUrl: "save-to-cart-modal.html"
 })
 export class SaveToCartPage {
 
@@ -63,7 +63,7 @@ export class SaveToCartPage {
   public onConfirm() {
     // on confirm save to storage.
     // create a service to store value
-
-    this.cartService.addToCart( this.category, this.service);
+    this.service.cartQualtity >0 ? this.cartService.addToCartList(this.service) : null;
   }
+
 }

@@ -5,7 +5,7 @@ export class ItemPackageDomain {
   private category_id: number;
   private maxv: any;
   private minv: any;
-  private package_id: number;
+  public package_id: number;
 
   public status: "1";
   public subcategory_id: "1";

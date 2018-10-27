@@ -54,9 +54,10 @@
     <ion-item *ngFor="let price of category.service; let priceIndex = index;">
       {{price.packagename}} <br> Amount: {{price.price | currency:'INR'}}
       <!-- <ion-icon name="rose" item-end></ion-icon> -->
-      <button (click)=" toggleChart(category, priceIndex )" clear small ion-button item-end outline icon-end style=" border-radius: 20px">
+      <button *ngIf="!isServiceInCartList(price)" (click)=" toggleChart(category, priceIndex )" clear small ion-button item-end outline icon-end style=" border-radius: 20px">
         <ion-icon ios="ios-cart" md="md-cart" item-end></ion-icon>
       </button>
+      <ion-badge color="yellow"  *ngIf="isServiceInCartList(price)" item-end>In Cart</ion-badge>
     </ion-item>
   </ion-list>
 </ion-content>

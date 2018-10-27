@@ -10,7 +10,8 @@ import { ItemPackageDomain } from "../../app/shared/model/item-price";
 import { CategoryDomain } from "../../app/shared/model/category";
 import { Subcategory } from "../../app/shared/model/subcategory";
 import { Title } from "@angular/platform-browser";
-import { SaveToCartPage } from "../save-to-cart/save-to-cart";
+import { SaveToCartPage } from "../save-to-cart/save-to-cart-modal";
+import { CartService } from "../../app/shared-services/cart.service";
 
 @IonicPage()
 @Component({
@@ -22,15 +23,16 @@ export class CategoryAndPricesPage implements OnInit {
   selectedCategoryIndex = null;
   public division: Subcategory;
 
-  private cartItemList = new Set();
-  private getServiceByIdUrl =
-    "http://asianetbangalore.com/android/rest/v1/services/1";
+  // private cartItemList = new Set();
+  // private getServiceByIdUrl =
+  //   "http://asianetbangalore.com/android/rest/v1/services/1";
 
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
     public toastCtrl: ToastController,
-    private modalController: ModalController
+    private modalController: ModalController,
+    private cartListService : CartService
   ) {}
 
   ngOnInit() {
@@ -126,4 +128,10 @@ export class CategoryAndPricesPage implements OnInit {
    * @param itemPrice - price of selected item.
    */
   public removeChartItem(itemCategory, itemPrice: ItemPackageDomain) {}
+
+
+  public isServiceInCartList(service) {
+    return this.cartListService.isServiceInCart(service);
+  }
+
 }
