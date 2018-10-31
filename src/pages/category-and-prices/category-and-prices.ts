@@ -127,7 +127,9 @@ export class CategoryAndPricesPage implements OnInit {
    * @param itemCategory - category of selected item.
    * @param itemPrice - price of selected item.
    */
-  public removeChartItem(itemCategory, itemPrice: ItemPackageDomain) {}
+  public removeChartItem(itemPrice: ItemPackageDomain) {
+    this.cartListService.removeFromCart(itemPrice);
+  }
 
 
   public isServiceInCartList(service) {

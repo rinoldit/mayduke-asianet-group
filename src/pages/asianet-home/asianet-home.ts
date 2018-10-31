@@ -1,7 +1,7 @@
 // import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 
 import { Component, Injector, ViewChild } from '@angular/core';
-import { IonicPage, NavController, NavParams, Slides } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, Slides, MenuController } from 'ionic-angular';
 // import { IAgService } from '../../app/shared-interfaces/ag-service';
 import { AgServicesService } from '../../app/shared-services/ag-services.service';
 import { CategoryAndPricesPage } from '../category-and-prices/category-and-prices';
@@ -82,4 +82,5 @@ export class AsianetHomePage {
       // console.table(this.homePageData );
     });
   }
+
 }

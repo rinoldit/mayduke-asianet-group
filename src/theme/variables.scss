@@ -94,3 +94,13 @@ $colors: (
 
 @import "roboto";
 @import "noto-sans";
+
+ion-navbar{
+  ion-buttons{
+    button{
+      ion-icon{
+        padding-top: 20px;
+      }
+    }
+  }
+}

@@ -5,7 +5,6 @@ import { Item } from "klaw";
 
 @Injectable()
 export class CartService {
-  private superCategory = new Supercategory();
   private cartList: ItemPackageDomain[] = [];
   constructor() {}
 
@@ -41,10 +40,11 @@ export class CartService {
   public removeFromCart(service: ItemPackageDomain) {
     const position = this.cartList.findIndex(
       (serviceEle: ItemPackageDomain) => {
-        return serviceEle.$package_id == service.$package_id;
+        return serviceEle.package_id == service.package_id;
       }
     );
     return this.cartList.splice(position, 1);
+    // update cartList storage
   }
 
   public getCartList() {

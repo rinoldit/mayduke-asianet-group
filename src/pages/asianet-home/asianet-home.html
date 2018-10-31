@@ -5,12 +5,23 @@
   Ionic pages and navigation.
 -->
 <ion-header>
+
   <ion-navbar color="primary">
+
+    <ion-buttons >
+      <button ion-button menuToggle >
+        <!-- // TODO external styling. -->
+        <ion-icon name="menu"  style="padding-top: 20px;"> </ion-icon>
+      </button>
+    </ion-buttons>
+
     <ion-title class="sampleFont">Asianet Group</ion-title>
   </ion-navbar>
+
 </ion-header>
+
 <ion-content>
-  <ion-card  class="serviceListCard" *ngFor="let service of homePageData">
+  <ion-card class="serviceListCard" *ngFor="let service of homePageData">
     <ion-item>
       <ion-card-title>
         {{service.category_name}}
@@ -21,10 +32,10 @@
             <ion-row align-items-start>
               <ion-list class="divisionListCard">
                 <ion-col text-wrap *ngFor="let division of service.subcategory">
-                  <ion-item >
-                    <ion-card (tap)="goToCategoryAndPricesPage(division)" >
-                      <ion-item >
-                        <ion-thumbnail  item-start>
+                  <ion-item>
+                    <ion-card (tap)="goToCategoryAndPricesPage(division)">
+                      <ion-item>
+                        <ion-thumbnail item-start>
                           <img src="http://www.asianetbangalore.com/images/water-tank-cleaning-services-02.jpg">
                         </ion-thumbnail>
                         <label>

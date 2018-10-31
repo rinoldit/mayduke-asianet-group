@@ -17,24 +17,15 @@
 
 </ion-content> -->
 
-
 <ion-header>
   <ion-navbar color="primary">
     <ion-title class="sampleFont">Asianet Group</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only>
+        <ion-icon name="cart"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
-
-  <!-- <ion-navbar no-border-bottom>
-  </ion-navbar> -->
-
-
-  <ion-toolbar no-border-top>
-
-    <ion-title>
-      {{division.sub_categoryname}}
-    </ion-title>
-
-  </ion-toolbar>
-
 </ion-header>
 
 
@@ -51,13 +42,21 @@
     <ion-list-header>
       {{category.super_catename}}
     </ion-list-header>
-    <ion-item *ngFor="let price of category.service; let priceIndex = index;">
-      {{price.packagename}} <br> Amount: {{price.price | currency:'INR'}}
-      <!-- <ion-icon name="rose" item-end></ion-icon> -->
-      <button *ngIf="!isServiceInCartList(price)" (click)=" toggleChart(category, priceIndex )" clear small ion-button item-end outline icon-end style=" border-radius: 20px">
-        <ion-icon ios="ios-cart" md="md-cart" item-end></ion-icon>
-      </button>
-      <ion-badge color="yellow"  *ngIf="isServiceInCartList(price)" item-end>In Cart</ion-badge>
-    </ion-item>
+    <ion-item-sliding *ngFor="let price of category.service; let priceIndex = index;">
+      <ion-item>
+        {{price.packagename}} <br> Amount: {{price.price | currency:'INR'}}
+        <!-- <ion-icon name="rose" item-end></ion-icon> -->
+        <button *ngIf="!isServiceInCartList(price)" (click)=" toggleChart(category, priceIndex )" clear small
+          ion-button item-end outline icon-end style=" border-radius: 20px">
+          <ion-icon ios="ios-cart" md="md-cart" item-end></ion-icon>
+        </button>
+        <ion-badge color="yellow" *ngIf="isServiceInCartList(price)" item-end>In Cart</ion-badge>
+      </ion-item>
+      <ion-item-options *ngIf="isServiceInCartList(price)">
+        <button (click)="removeChartItem(price)">
+          <ion-badge color="danger" item-end> Remove from cart </ion-badge>
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
   </ion-list>
 </ion-content>
