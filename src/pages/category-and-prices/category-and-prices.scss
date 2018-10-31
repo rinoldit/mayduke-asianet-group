@@ -35,3 +35,13 @@ ion-segment {
         width: auto;
     }
 }
+
+#cart-btn {
+  position: relative;
+}
+
+#cart-badge {
+  position: absolute;
+  top: 0px;
+  right: 24px;
+}
