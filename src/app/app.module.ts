@@ -18,6 +18,7 @@ import { CategoryAndPricesPage } from '../pages/category-and-prices/category-and
 import { HomePageDataProvider } from '../providers/home-page-data/home-page-data';
 import { SaveToCartPage } from '../pages/save-to-cart/save-to-cart-modal';
 import { CartService } from './shared-services/cart.service';
+import { CartPage } from '../pages/cart/cart';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { CartService } from './shared-services/cart.service';
     AsianetHomePage,
     ScrollableTabs,
     CategoryAndPricesPage,
-    SaveToCartPage
+    SaveToCartPage,
+    CartPage
   ],
   imports: [
     BrowserModule,
@@ -46,6 +48,7 @@ import { CartService } from './shared-services/cart.service';
     AsianetHomePage,
     CategoryAndPricesPage,
     SaveToCartPage,
+    CartPage
   ],
   providers: [
     StatusBar,

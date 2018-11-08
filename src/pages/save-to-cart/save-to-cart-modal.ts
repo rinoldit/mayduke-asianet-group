@@ -42,7 +42,7 @@ export class SaveToCartPage {
   }
 
   private setCartQuantity() {
-    this.service.cartQualtity ? this.service.cartQualtity : this.service.cartQualtity = 0;
+    return this.service.cartQualtity ? this.service.cartQualtity : this.service.cartQualtity = 0;
   }
 
   onClose() {
@@ -51,7 +51,6 @@ export class SaveToCartPage {
 
 
   public increasCartQuantity() {
-
     this.service.cartQualtity += 1;
     console.log(this.service.cartQualtity);
   }
@@ -64,6 +63,7 @@ export class SaveToCartPage {
     // on confirm save to storage.
     // create a service to store value
     this.service.cartQualtity >0 ? this.cartService.addToCartList(this.service) : null;
+    this.onClose();
   }
 
 }

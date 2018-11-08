@@ -37,7 +37,7 @@
   <button ion-button small outline color="danger" (click)="onClose()">
     Cancel
   </button>
-  <button ion-button small outline color="green" (click)="onConfirm()" >
+  <button ion-button small outline color="green" (click)="onConfirm()"  [disabled]="!(service?.cartQualtity)">
     Confirm
   </button>
 </ion-content>

@@ -21,9 +21,9 @@
   <ion-navbar color="primary">
     <ion-title class="sampleFont">Asianet Group</ion-title>
     <ion-buttons end >
-      <button  ion-button icon-only color="yellow">
+      <button  ion-button icon-only color="yellow" (click)="onClickCartIcon()" >
         <ion-icon name="cart"></ion-icon>
-        <ion-badge item-end id="cart-badge">277</ion-badge>
+        <ion-badge item-end id="cart-badge">{{cartListService.getCartList().length}}</ion-badge>
       </button>
     </ion-buttons>
   </ion-navbar>

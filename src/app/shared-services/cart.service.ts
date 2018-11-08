@@ -47,7 +47,7 @@ export class CartService {
     // update cartList storage
   }
 
-  public getCartList() {
+  public getCartList(): ItemPackageDomain[] {
     return this.cartList.slice();
   }
 
